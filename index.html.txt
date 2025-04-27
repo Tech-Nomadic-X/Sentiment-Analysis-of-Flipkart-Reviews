@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            padding: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1em;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sentiment Analyzer</h2>
+        <form method="POST">
+            <textarea name="review" rows="5" placeholder="Enter your review here..." required></textarea>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+        {% if sentiment %}
+        <div class="result">
+            Sentiment: {{ sentiment }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
